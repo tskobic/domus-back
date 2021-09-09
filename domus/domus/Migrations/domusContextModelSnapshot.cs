@@ -336,10 +336,7 @@ namespace domus.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("UserId1")
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -347,7 +344,7 @@ namespace domus.Migrations
 
                     b.HasIndex("EventTypeId");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Events");
                 });
@@ -462,7 +459,7 @@ namespace domus.Migrations
                         .IsRequired();
 
                     b.HasOne("domus.Authentication.ApplicationUser", "User")
-                        .WithMany()
+                        .WithMany("Ads")
                         .HasForeignKey("UserId");
 
                     b.Navigation("AdType");
@@ -495,9 +492,9 @@ namespace domus.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("domus.Models.AdType", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId1");
+                    b.HasOne("domus.Authentication.ApplicationUser", "User")
+                        .WithMany("Events")
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Dormitory");
 
@@ -527,6 +524,10 @@ namespace domus.Migrations
 
             modelBuilder.Entity("domus.Authentication.ApplicationUser", b =>
                 {
+                    b.Navigation("Ads");
+
+                    b.Navigation("Events");
+
                     b.Navigation("Participants");
                 });
 
