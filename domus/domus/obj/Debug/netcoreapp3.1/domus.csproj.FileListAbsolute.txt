@@ -136,3 +136,4 @@ C:\Users\Korisnik\domus-back\domus\domus\bin\Debug\netcoreapp3.1\Microsoft.AspNe
 C:\Users\Korisnik\domus-back\domus\domus\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\Korisnik\domus-back\domus\domus\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 C:\Users\Korisnik\domus-back\domus\domus\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Korisnik\domus-back\domus\domus\obj\Debug\netcoreapp3.1\domus.GeneratedMSBuildEditorConfig.editorconfig
